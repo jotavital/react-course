@@ -1,23 +1,34 @@
+import { useState } from "react";
+
 function Evento() {
 
-    function sum(val1, val2) {
-        console.log(2 + 2);
-        return 2 + 2;
+    const [name, setName] = useState('Default');
+    const [password, setPassword] = useState();
+
+    function cadastrarUsuario(e) {
+        e.preventDefault();
+        console.log(name);
+        console.log(password);
     }
 
     return (
         <div>
-            <div>
-                <label htmlFor="val1">val1</label>
-                <input type="number" name="val1" id="val1" />
-            </div>
-            <div>
-                <label htmlFor="val2">val2</label>
-                <input type="number" name="val2" id="val2" />
-            </div>
-            <div>
-                <button onClick={sum}>Somar</button>
-            </div>
+            <h1>Meu cadastro</h1>
+            <form onSubmit={cadastrarUsuario}>
+                <div>
+                    <label htmlFor="name">Nome</label>
+                    <input type="text" name="name" id="name" onChange={(e) => setName(e.target.value)} value={name} />
+                </div>
+                <br />
+                <div>
+                    <label htmlFor="password">Senha</label>
+                    <input type="text" name="password" id="password" onChange={(e) => setPassword(e.target.value) } />
+                </div>
+                <br />
+                <div>
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
         </div>
     );
 }
