@@ -1,36 +1,22 @@
-import { useState } from "react";
+import Button from "./Button";
 
 function Evento() {
 
-    const [name, setName] = useState('Default');
-    const [password, setPassword] = useState();
+    function meuEvento() {
+        alert("Evento passado por props");
+    }
 
-    function cadastrarUsuario(e) {
-        e.preventDefault();
-        console.log(name);
-        console.log(password);
+    function outroEvento(){
+        alert("Segundo evento!");
     }
 
     return (
         <div>
-            <h1>Meu cadastro</h1>
-            <form onSubmit={cadastrarUsuario}>
-                <div>
-                    <label htmlFor="name">Nome</label>
-                    <input type="text" name="name" id="name" onChange={(e) => setName(e.target.value)} value={name} />
-                </div>
-                <br />
-                <div>
-                    <label htmlFor="password">Senha</label>
-                    <input type="text" name="password" id="password" onChange={(e) => setPassword(e.target.value) } />
-                </div>
-                <br />
-                <div>
-                    <button type="submit">Enviar</button>
-                </div>
-            </form>
+            <p>clique para disparar um evento</p>
+            <Button event={meuEvento} text="Primeiro evento" />
+            <Button event={outroEvento} text="Segundo evento" />
         </div>
     );
 }
 
-export default Evento;
+export default Evento; 

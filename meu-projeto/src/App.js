@@ -1,13 +1,15 @@
 import './App.css';
-import List from './components/List';
-import Evento from './components/Evento';
+import Condicional from './components/Condicional';
+import Lista from './components/Lista';
 
 function App() {
 
+    const minhaLista = ['React', 'Vue', 'Angular'];
+
     return (
         <div className="App">
-            <List />
-            <Evento />
+            <h1>Listinhas</h1>
+            <Lista></Lista>
         </div>
     );
 }
