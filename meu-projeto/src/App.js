@@ -1,5 +1,4 @@
 import './App.css';
-import Condicional from './components/Condicional';
 import Lista from './components/Lista';
 
 function App() {
@@ -9,7 +8,7 @@ function App() {
     return (
         <div className="App">
             <h1>Listinhas</h1>
-            <Lista></Lista>
+            <Lista itens={minhaLista}></Lista>
         </div>
     );
 }
