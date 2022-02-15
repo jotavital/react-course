@@ -9,17 +9,19 @@ import './App.css';
 function App() {
 
     return (
-        <Router>
-            <Navbar />
+        <>
+            <Router>
+                <Navbar />
 
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/empresa" element={<Empresa />} />
-                <Route path="/contato" element={<Contato />} />
-            </Routes>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/empresa" element={<Empresa />} />
+                    <Route path="/contato" element={<Contato />} />
+                </Routes>
 
+            </Router>
             <Footer />
-        </Router>
+        </>
     );
 }
 
